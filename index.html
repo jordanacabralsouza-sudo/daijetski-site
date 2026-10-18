@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DAI JETSKI · Revenda NX Boats no Tocantins</title>
+<meta name="description" content="Qual lancha NX serve para você? Responda cinco perguntas e a DAI JETSKI, revenda NX Boats no Tocantins, chama você no WhatsApp.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Qual lancha NX serve para você? · DAI JETSKI">
+<meta property="og:description" content="Responda cinco perguntas e a DAI JETSKI chama você no WhatsApp.">
+<meta property="og:type" content="website">
+<link rel="icon" href="imagens/dai-jetski-brasao.png">
+<style>
+@font-face { font-family: "Archivo Black"; src: url("fontes/archivo-black.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fontes/inter-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fontes/inter-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fontes/inter-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+
+:root { --preto: #000; --branco: #fff; --tinta: #111; --cinza: #5f5f5f; --linha: #d9d9d9; --fundo: #f3f3f3; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--preto); color: var(--tinta); font-family: "Inter", "Helvetica Neue", Arial, sans-serif; font-size: 16px; line-height: 1.45; }
+img { max-width: 100%; height: auto; display: block; }
+.t { font-family: "Archivo Black", "Arial Black", sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: -0.01em; line-height: 1.04; }
+.dentro { max-width: 1120px; margin: 0 auto; }
+
+.barra { background: var(--preto); color: var(--branco); }
+.barra .dentro { display: flex; align-items: center; gap: 10px; padding: 9px 20px; }
+.barra img { width: 30px; height: auto; }
+.barra span { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; }
+
+/* capa: a foto ocupa a largura toda e o título entra por cima da água */
+.capa { background: var(--preto); color: var(--branco); }
+.capa .quadro { position: relative; margin: 0; }
+.capa .quadro img { width: 100%; height: 56vw; min-height: 200px; max-height: 320px; object-fit: cover; object-position: 44% 58%; }
+.capa .quadro:after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 62%; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.72) 62%, #000 100%); }
+.capa .texto { position: relative; margin-top: -66px; padding: 0 20px 18px 20px; }
+h1 { font-size: 33px; margin: 0 0 12px 0; padding-top: 0.1em; }
+.lead { font-size: 16px; line-height: 1.42; margin: 0; max-width: 30em; }
+
+.cartao { background: var(--branco); color: var(--tinta); padding: 12px 20px 26px 20px; }
+.anda { display: flex; align-items: center; justify-content: space-between; min-height: 30px; margin-bottom: 6px; font-size: 13px; color: var(--cinza); }
+.anda button { border: 0; background: none; padding: 6px 10px 6px 0; margin: 0; font: inherit; font-weight: 600; color: var(--tinta); cursor: pointer; visibility: hidden; }
+.anda button.on { visibility: visible; }
+.trilho { height: 4px; background: var(--linha); margin-bottom: 18px; }
+.trilho i { display: block; height: 4px; width: 20%; background: var(--preto); transition: width 0.2s ease; }
+fieldset { border: 0; margin: 0 0 22px 0; padding: 0; min-width: 0; }
+legend { display: block; width: 100%; padding: 0.1em 0 0 0; margin: 0 0 14px 0; font-family: "Archivo Black", "Arial Black", sans-serif; font-size: 21px; line-height: 1.08; text-transform: uppercase; letter-spacing: -0.01em; }
+legend:focus { outline: none; }
+.sub { font-size: 15px; color: var(--cinza); margin: -6px 0 18px 0; }
+.js .passo { display: none; margin-bottom: 0; }
+.js .passo.atual { display: block; }
+.ops { display: grid; gap: 9px; }
+.ops label { position: relative; display: block; }
+.ops input { position: absolute; opacity: 0; width: 100%; height: 100%; left: 0; top: 0; margin: 0; cursor: pointer; }
+.ops span { display: flex; align-items: center; justify-content: center; min-height: 54px; padding: 8px 14px; border: 1.5px solid var(--preto); font-size: 16px; font-weight: 500; text-align: center; }
+.ops input:checked + span { background: var(--preto); color: var(--branco); }
+.ops input:focus-visible + span { outline: 3px solid #9a9a9a; }
+.campo { margin-bottom: 14px; }
+label.rot { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+label.rot small { font-weight: 400; color: var(--cinza); }
+input[type=text], input[type=tel] { width: 100%; height: 52px; border: 1.5px solid var(--preto); border-radius: 0; padding: 0 14px; font: inherit; font-size: 17px; color: var(--tinta); background: var(--branco); -webkit-appearance: none; appearance: none; }
+input[type=text]:focus, input[type=tel]:focus { outline: 3px solid #9a9a9a; outline-offset: 0; }
+input::placeholder { color: #8a8a8a; }
+.aceite { display: flex; gap: 12px; align-items: flex-start; margin: 4px 0 18px 0; font-size: 14px; line-height: 1.4; }
+.aceite input { flex: 0 0 24px; width: 24px; height: 24px; margin: 0; accent-color: #000; }
+button.env, a.zap { display: block; width: 100%; min-height: 58px; border: 0; background: var(--preto); color: var(--branco); font-family: "Archivo Black", "Arial Black", sans-serif; font-size: 17px; letter-spacing: 0.02em; text-transform: uppercase; cursor: pointer; text-align: center; text-decoration: none; line-height: 58px; padding: 0 12px; }
+button.env:disabled { opacity: 0.55; }
+.isca { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.cliente { display: none; margin: 20px 0 0 0; font-size: 14px; color: var(--cinza); text-align: center; }
+.cliente a { color: var(--tinta); font-weight: 600; }
+.erro { display: none; margin: 0 0 14px 0; padding: 10px 12px; border: 1.5px solid var(--preto); font-size: 14px; font-weight: 500; }
+.erro.on { display: block; }
+.invalido { box-shadow: inset 0 -4px 0 var(--preto); }
+.some { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.ok { display: none; }
+.ok h2 { font-size: 26px; margin: 8px 0 10px 0; padding-top: 0.1em; }
+.ok p { margin: 0 0 18px 0; font-size: 17px; }
+.ok .volta { font-size: 14px; color: var(--cinza); margin: 16px 0 0 0; }
+.ok .volta a { color: var(--tinta); font-weight: 600; }
+body.recebido .ok { display: block; }
+body.recebido form { display: none; }
+
+.pe { background: var(--preto); color: var(--branco); }
+.pe .dentro { padding: 22px 20px 28px 20px; display: flex; align-items: center; gap: 14px; }
+.pe img { width: 40px; }
+.pe p { margin: 0; font-size: 12.5px; line-height: 1.5; color: #c9c9c9; }
+.pe a { color: var(--branco); font-weight: 600; }
+
+@media (min-width: 900px) {
+  .barra .dentro { padding: 14px 40px; }
+  .palco > .dentro { display: grid; grid-template-columns: minmax(0, 1fr) 440px; column-gap: 56px; align-items: start; padding: 40px 40px 72px 40px; }
+  .capa { display: flex; flex-direction: column; }
+  .capa .texto { order: 1; margin: 0; padding: 8px 0 0 0; }
+  .capa .quadro { order: 2; margin-top: 34px; }
+  .capa .quadro img { height: auto; min-height: 0; max-height: none; aspect-ratio: 16 / 9; }
+  .capa .quadro:after { display: none; }
+  h1 { font-size: 58px; margin-bottom: 22px; }
+  .lead { font-size: 20px; max-width: 26em; }
+  .cartao { padding: 26px 30px 32px 30px; position: sticky; top: 24px; }
+  legend { font-size: 24px; }
+  .pe .dentro { padding: 28px 40px; }
+}
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <div class="dentro">
+    <img src="imagens/dai-jetski-brasao.png" alt="DAI JETSKI" width="367" height="380">
+    <span>Revenda NX Boats no Tocantins</span>
+  </div>
+</header>
+
+<main>
+  <div class="palco">
+    <div class="dentro">
+      <section class="capa">
+        <figure class="quadro">
+          <img src="imagens/nx-50-invictus.jpg" alt="Lancha NX 50 Invictus Fly navegando" width="1600" height="900">
+        </figure>
+        <div class="texto">
+          <h1 class="t">Qual lancha NX serve para você?</h1>
+          <p class="lead">Responda cinco perguntas e a DAI JETSKI chama você no WhatsApp.</p>
+        </div>
+      </section>
+
+      <section class="cartao" id="cadastro" aria-label="Cadastro">
+        <form id="f" method="post" action="javascript:void(0)" novalidate>
+          <div class="anda">
+            <button type="button" id="voltar">← Voltar</button>
+            <span id="conta">1 de 5</span>
+          </div>
+          <div class="trilho" aria-hidden="true"><i id="trilho"></i></div>
+          <p class="some" id="fala" aria-live="polite"></p>
+
+          <fieldset class="passo" data-grupo="onde">
+            <legend tabindex="-1">Onde você quer usar o barco?</legend>
+            <div class="ops">
+              <label><input type="radio" name="onde" value="Lago de Palmas"><span>Lago de Palmas</span></label>
+              <label><input type="radio" name="onde" value="Litoral"><span>Litoral</span></label>
+              <label><input type="radio" name="onde" value="Lago e litoral"><span>Lago e litoral</span></label>
+              <label><input type="radio" name="onde" value="Outro lago ou rio"><span>Outro lago ou rio</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="passo" data-grupo="pessoas">
+            <legend tabindex="-1">Quantas pessoas você quer levar?</legend>
+            <div class="ops">
+              <label><input type="radio" name="pessoas" value="Até 10"><span>Até 10</span></label>
+              <label><input type="radio" name="pessoas" value="De 11 a 15"><span>De 11 a 15</span></label>
+              <label><input type="radio" name="pessoas" value="De 16 a 24"><span>De 16 a 24</span></label>
+              <label><input type="radio" name="pessoas" value="Ainda não sei"><span>Ainda não sei</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="passo" data-grupo="dormir">
+            <legend tabindex="-1">Vai dormir a bordo?</legend>
+            <div class="ops">
+              <label><input type="radio" name="dormir" value="Sim"><span>Sim</span></label>
+              <label><input type="radio" name="dormir" value="Não"><span>Não</span></label>
+              <label><input type="radio" name="dormir" value="Talvez"><span>Talvez</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="passo" data-grupo="tem">
+            <legend tabindex="-1">Você já tem barco?</legend>
+            <div class="ops">
+              <label><input type="radio" name="tem" value="Ainda não"><span>Ainda não</span></label>
+              <label><input type="radio" name="tem" value="Tenho jet ski"><span>Tenho jet ski</span></label>
+              <label><input type="radio" name="tem" value="Tenho lancha ou outro barco"><span>Tenho lancha ou outro barco</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="passo" data-grupo="quando">
+            <legend tabindex="-1">Quando você pensa em comprar?</legend>
+            <div class="ops">
+              <label><input type="radio" name="quando" value="Em até 3 meses"><span>Em até 3 meses</span></label>
+              <label><input type="radio" name="quando" value="De 3 a 6 meses"><span>De 3 a 6 meses</span></label>
+              <label><input type="radio" name="quando" value="Depois disso"><span>Depois disso</span></label>
+              <label><input type="radio" name="quando" value="Só estou pesquisando"><span>Só estou pesquisando</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="passo" data-grupo="contato">
+            <legend tabindex="-1">Agora o seu contato</legend>
+            <p class="sub">A DAI JETSKI chama você no WhatsApp, já sabendo o que você respondeu.</p>
+            <div class="campo">
+              <label class="rot" for="nome">Seu nome</label>
+              <input type="text" id="nome" name="nome" autocomplete="name">
+            </div>
+            <div class="campo">
+              <label class="rot" for="zap">WhatsApp com DDD</label>
+              <input type="tel" id="zap" name="whatsapp" inputmode="tel" autocomplete="tel-national" placeholder="(63) 90000-0000">
+            </div>
+            <div class="campo">
+              <label class="rot" for="cidade">Cidade</label>
+              <input type="text" id="cidade" name="cidade" autocomplete="address-level2">
+            </div>
+            <div class="campo">
+              <label class="rot" for="modelo">Já tem um modelo em vista? <small>(opcional)</small></label>
+              <input type="text" id="modelo" name="modelo" autocomplete="off">
+            </div>
+            <div class="isca" aria-hidden="true"><label>Não preencha este campo <input type="text" name="site" tabindex="-1" autocomplete="off"></label></div>
+            <label class="aceite">
+              <input type="checkbox" id="aceite" name="aceite" value="sim">
+              <span>Autorizo a DAI JETSKI a me chamar no WhatsApp para falar sobre lanchas NX. Meus dados são usados só para esse contato.</span>
+            </label>
+            <p class="erro" id="erro" role="alert"></p>
+            <button class="env" type="submit" id="enviar">Me chamem no WhatsApp</button>
+          </fieldset>
+          <noscript><p class="erro on">Para enviar o cadastro, o navegador precisa estar com o JavaScript ligado.</p></noscript>
+        </form>
+
+        <div class="ok" id="ok" tabindex="-1">
+          <h2 class="t" id="oktitulo">Cadastro recebido</h2>
+          <p id="oktexto">A DAI JETSKI vai chamar você no WhatsApp, no número que você informou.</p>
+          <a class="zap" id="zaplink" href="#" rel="noopener">Falar agora no WhatsApp</a>
+          <p class="volta">Enquanto isso, os vídeos novos saem no Instagram: <a href="https://www.instagram.com/daijetski/" rel="noopener">@daijetski</a></p>
+        </div>
+
+        <p class="cliente" id="cliente">Já é cliente ou quer falar de outro assunto? <a id="clientelink" href="#" rel="noopener">Chame a loja no WhatsApp</a>.</p>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="pe">
+  <div class="dentro">
+    <img src="imagens/dai-jetski-brasao.png" alt="" width="367" height="380">
+    <p>DAI JETSKI · Revenda NX Boats no Tocantins<br>Palmas · Instagram: <a href="https://www.instagram.com/daijetski/" rel="noopener">@daijetski</a><br>Na foto: NX 50 Invictus Fly. Imagem da NX Boats.</p>
+  </div>
+</footer>
+
+<script>
+/* ------------------------------------------------------------------
+   CONFIGURAÇÃO. São as duas únicas coisas a preencher antes de publicar.
+   WHATSAPP: número que recebe os contatos, só dígitos, com 55 e DDD. Exemplo: "5563900000000".
+   PLANILHA: endereço do aplicativo da web criado na planilha de cadastros (Google Apps Script).
+   Com os dois vazios a página abre, mas não aceita cadastro: avisa que ainda não está ligada à planilha.
+   Só mostra "Cadastro recebido" quando a planilha responde "ok". Se ela não responder, o cadastro segue pelo WhatsApp.
+   ------------------------------------------------------------------ */
+var CONFIG = { WHATSAPP: "", PLANILHA: "https://script.google.com/macros/s/AKfycbz6yhMrUzVtwWsxTAWOWR2ujSgKMWhYfmSEVahbJhAHV0lEzJJCwI52egCas201ov_XLA/exec" };
+
+(function () {
+  document.documentElement.className += " js";
+  var f = document.getElementById("f"), erro = document.getElementById("erro"), zap = document.getElementById("zap");
+  var botao = document.getElementById("enviar"), link = document.getElementById("zaplink");
+  var voltar = document.getElementById("voltar"), conta = document.getElementById("conta"), trilho = document.getElementById("trilho"), fala = document.getElementById("fala");
+  var passos = [].slice.call(f.querySelectorAll(".passo")), atual = 0, ROTULO = botao.textContent;
+  var GRUPOS = [["onde", "onde você quer usar"], ["pessoas", "quantas pessoas"], ["dormir", "se vai dormir a bordo"], ["tem", "se já tem barco"], ["quando", "quando pensa em comprar"]];
+
+  /* uma pergunta por tela: tocar numa resposta leva para a próxima */
+  function mostra(n, foco) {
+    atual = Math.max(0, Math.min(passos.length - 1, n));
+    passos.forEach(function (p, k) { p.classList.toggle("atual", k === atual); });
+    var ultimo = atual === passos.length - 1, perguntas = passos.length - 1;
+    conta.textContent = ultimo ? "Só falta o contato" : (atual + 1) + " de " + perguntas;
+    trilho.style.width = (ultimo ? 100 : (atual + 1) / perguntas * 100) + "%";
+    voltar.classList.toggle("on", atual > 0);
+    if (foco) {
+      var titulo = passos[atual].querySelector("legend");
+      fala.textContent = (ultimo ? "" : "Pergunta " + (atual + 1) + " de " + perguntas + ": ") + titulo.textContent;
+      var topo = document.getElementById("cadastro").getBoundingClientRect().top;
+      if (topo < 0 || (ultimo && window.innerWidth < 900)) window.scrollTo(0, window.pageYOffset + topo);     /* no contato, o cartão sobe para o topo da tela do celular */
+      if (atual < passos.length - 1) titulo.focus({ preventScroll: true });
+    }
+  }
+  passos.forEach(function (p, k) {
+    if (k === passos.length - 1) return;
+    p.addEventListener("click", function (ev) {
+      if (ev.target.type === "radio" && ev.detail !== 0) setTimeout(function () { mostra(k + 1, true); }, 160);   /* toque ou clique; seta do teclado não avança sozinha */
+    });
+    p.addEventListener("keydown", function (ev) {
+      if (ev.key === "Enter" && p.querySelector("input:checked")) { ev.preventDefault(); mostra(k + 1, true); }
+    });
+  });
+  voltar.addEventListener("click", function () { erro.classList.remove("on"); mostra(atual - 1, true); });
+  mostra(0, false);
+
+  /* telefone: aceita colado com +55, guarda só DDD e número */
+  function soNumero(v) {
+    var d = v.replace(/\D/g, "");
+    if (d.length > 11 && d.indexOf("55") === 0) d = d.slice(2);
+    if (d.length > 11 && d.charAt(0) === "0") d = d.slice(1);
+    return d.slice(0, 11);
+  }
+  function mascara() {
+    var d = soNumero(zap.value), o = d;
+    if (d.length > 2) o = "(" + d.slice(0, 2) + ") " + d.slice(2);
+    if (d.length > 6) o = "(" + d.slice(0, 2) + ") " + d.slice(2, d.length - 4) + "-" + d.slice(-4);
+    zap.value = o;
+  }
+  zap.addEventListener("input", mascara);
+  zap.addEventListener("blur", mascara);
+
+  /* quem já é cliente tem o WhatsApp da loja à mão desde a primeira pergunta */
+  if (CONFIG.WHATSAPP) {
+    document.getElementById("clientelink").href = "https://wa.me/" + CONFIG.WHATSAPP;
+    document.getElementById("cliente").style.display = "block";
+  }
+
+  function valor(nome) { var r = f.querySelector('input[name="' + nome + '"]:checked'); return r ? r.value : ""; }
+
+  function dados() {
+    return {
+      nome: f.nome.value.trim(), whatsapp: soNumero(zap.value), cidade: f.cidade.value.trim(),
+      onde: valor("onde"), pessoas: valor("pessoas"), dormir: valor("dormir"), tem: valor("tem"), quando: valor("quando"),
+      modelo: f.modelo.value.trim(), aceite: f.aceite.checked ? "sim" : "", site: f.site.value,
+      origem: location.search.replace(/^\?/, "") || document.referrer || "direto", enviado_em: new Date().toISOString()
+    };
+  }
+
+  /* devolve o que falta. Pergunta sem resposta volta para a tela dela; campo de contato ganha o aviso em cima */
+  function faltando(d) {
+    var falta = [], primeiro = null, tela = -1;
+    [].forEach.call(f.querySelectorAll(".invalido"), function (e) { e.classList.remove("invalido"); });
+    GRUPOS.forEach(function (g, k) { if (!d[g[0]]) { falta.push(g[1]); if (tela < 0) tela = k; } });
+    function marca(el, nome) { if (el.classList) el.classList.add("invalido"); if (!primeiro) primeiro = el; falta.push(nome); }
+    if (d.nome.length < 2) marca(f.nome, "seu nome");
+    if (d.whatsapp.length < 11) marca(zap, "o WhatsApp com DDD e os 9 dígitos");
+    if (d.cidade.length < 2) marca(f.cidade, "a cidade");
+    if (!d.aceite) marca(f.aceite.parentNode, "a autorização de contato");
+    if (tela >= 0) {
+      mostra(tela, true);
+      var ops = passos[tela].querySelector(".ops"); ops.parentNode.insertBefore(erro, ops);
+    } else if (primeiro) {
+      var bloco = primeiro.closest ? (primeiro.closest(".campo") || primeiro) : primeiro;
+      bloco.parentNode.insertBefore(erro, bloco);
+      if (primeiro.focus) primeiro.focus({ preventScroll: true });
+    }
+    return falta;
+  }
+
+  function mensagem(d) {
+    var t = "Olá! Acabei de preencher o cadastro da DAI JETSKI.\n" +
+      "Nome: " + d.nome + "\nCidade: " + d.cidade + "\nOnde quero usar: " + d.onde + "\nPessoas: " + d.pessoas + "\nDormir a bordo: " + d.dormir +
+      "\nJá tenho barco: " + d.tem + "\nQuando penso em comprar: " + d.quando + (d.modelo ? "\nModelo em vista: " + d.modelo : "");
+    return encodeURIComponent(t);
+  }
+
+  /* guardado = true: a planilha confirmou. guardado = false: o cadastro segue pelo WhatsApp, com as respostas já escritas */
+  function recebido(d, guardado) {
+    link.href = "https://wa.me/" + CONFIG.WHATSAPP + "?text=" + mensagem(d);
+    if (!CONFIG.WHATSAPP) link.style.display = "none";
+    if (!guardado) {
+      document.getElementById("oktitulo").textContent = "Falta um toque";
+      document.getElementById("oktexto").textContent = "Não deu para guardar o seu cadastro agora. Toque no botão e mande as respostas pelo WhatsApp: elas já vão escritas.";
+      link.textContent = "Mandar pelo WhatsApp";
+    }
+    document.body.classList.add("recebido");
+    document.getElementById("cliente").style.display = "none";
+    var ok = document.getElementById("ok"); ok.focus({ preventScroll: true });
+    var topo = document.getElementById("cadastro").getBoundingClientRect().top;
+    if (topo < 0) window.scrollTo(0, window.pageYOffset + topo);
+  }
+
+  /* a planilha não confirmou: com número, o cadastro vai pelo WhatsApp; sem número, a pessoa é avisada e nada é dado como recebido */
+  function naoGuardou(d, aviso) {
+    if (CONFIG.WHATSAPP) { recebido(d, false); return; }
+    botao.disabled = false; botao.textContent = ROTULO;
+    botao.parentNode.insertBefore(erro, botao);
+    erro.textContent = aviso; erro.classList.add("on"); erro.scrollIntoView({ block: "center" });
+  }
+
+  f.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    if (atual < passos.length - 1) return;           /* Enter numa pergunta não envia o cadastro pela metade */
+    var d = dados(), falta = faltando(d);
+    if (falta.length) {
+      erro.textContent = "Falta preencher: " + falta.join(", ") + ".";
+      erro.classList.add("on"); erro.scrollIntoView({ block: "center" }); return;
+    }
+    erro.classList.remove("on"); botao.disabled = true; botao.textContent = "Enviando";
+    if (d.site) { recebido(d, true); return; }      /* campo escondido preenchido: é robô, nada é guardado */
+    if (!CONFIG.PLANILHA) { naoGuardou(d, "Esta página ainda não está ligada à planilha de cadastros."); return; }
+    fetch(CONFIG.PLANILHA, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(d) })
+      .then(function (r) { return r.text(); })
+      .then(function (t) { if (t.trim() === "ok") recebido(d, true); else naoGuardou(d, "Não deu para guardar o seu cadastro. Tente de novo em instantes."); })
+      .catch(function () { naoGuardou(d, "A internet falhou na hora de enviar. Tente de novo em instantes."); });
+  });
+})();
+</script>
+</body>
+</html>
